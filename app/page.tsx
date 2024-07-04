@@ -8,20 +8,17 @@ export default async function Home() {
   const dataYamaha = await getMotoData(Yamaha);
   const dataKawasaki = await getMotoData(Kawasaki);
 
-  console.log(dataYamaha);
-  // console.log(dataHonda);
   return (
     <div className="h-screen">
-      <h1 className="text-4xl text-center mt-14 font-bold">Hello World</h1>
-      <div className="flex flex-col justify-center items-center h-1/3">
-        <div className="text-xl"> Server Action Info</div>
-        <button className="bg-blue-500 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded mt-4">
-          Get Data
-        </button>
-      </div>
+      <h1 className="text-4xl text-center mt-14 font-bold">
+        Hero Component HERE
+      </h1>
+      <div className="border-4 border-red-700  h-1/3">HERO COMPONENT</div>
       {/* Multiple Items */}
-      <MotoList data={dataYamaha} />
-      <MotoList data={dataKawasaki} />
+      <div className="flex flex-col gap-6">
+        <MotoList data={dataYamaha} />
+        <MotoList data={dataKawasaki} />
+      </div>
     </div>
   );
 }
