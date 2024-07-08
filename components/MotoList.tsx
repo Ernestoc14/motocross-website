@@ -1,12 +1,18 @@
 import MotoCard from "./MotoCard";
+import { MotoProps } from "@/types";
 
-export function MotoList({ data }: any): JSX.Element {
-  const motoData = Array.isArray(data) ? data : data.items || [];
+interface MotoListProps {
+  moto: MotoProps[];
+}
+
+export function MotoList({ moto }: MotoListProps): JSX.Element {
+  const motoData = Array.isArray(moto) ? moto : [];
 
   return (
-    <div>
-      
-      <MotoCard data={motoData} />
+    <div className="home__motos-wrapper">
+      {motoData.slice(0, 4).map((moto) => (
+        <MotoCard key={moto.articleCompleteInfo.articleID} moto={moto} />
+      ))}
     </div>
   );
 }

@@ -9,10 +9,5 @@ export interface ArticleCompleteInfo {
 }
 
 export interface MotoProps {
-  articleID: number
-  makeName: string
-  modelName: string
-  categoryName: string
-  yearName: number
-  priceName: string
+  articleCompleteInfo: ArticleCompleteInfo
 }

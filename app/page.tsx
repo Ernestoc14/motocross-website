@@ -9,16 +9,19 @@ export default async function Home() {
   const dataKawasaki = await getMotoData(Kawasaki);
 
   return (
-    <div className="h-screen">
-      <h1 className="text-4xl text-center mt-14 font-bold">
-        Hero Component HERE
-      </h1>
-      <div className="border-4 border-red-700  h-1/3">HERO COMPONENT</div>
-      {/* Multiple Items */}
-      <div className="flex flex-col gap-6">
-        <MotoList data={dataYamaha} />
-        <MotoList data={dataKawasaki} />
+    <main className="overflow-hidden">
+      {/* <Hero /> */}
+      <div className="mt-12 padding-x padding-y max-width" id="discover">
+        <h1 className="text-4xl text-center mt-14 font-bold">
+          Hero Component HERE
+        </h1>
+        <div className="border-4 border-red-700  h-1/3">HERO COMPONENT</div>
+        {/* Multiple Items */}
+        <div className="home__motos-wrapper">
+          <MotoList moto={dataYamaha} />
+          <MotoList moto={dataKawasaki} />
+        </div>
       </div>
-    </div>
+    </main>
   );
 }
