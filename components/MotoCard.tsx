@@ -5,12 +5,12 @@ interface MotoCardProps {
   moto: MotoProps;
 }
 const MotoCard = ({ moto }: MotoCardProps) => {
-  const priceNamne = moto.articleCompleteInfo.priceName || ""
+  const priceNamne = moto.articleCompleteInfo.priceName || "";
   const priceMatch = priceNamne.match(/(\d+)/);
   const price = priceMatch ? priceMatch[0] : "6649";
 
   return (
-    <div className="moto-card group">
+    <div className="moto-card group overflow-hidden">
       <div className="moto-card__content">
         <h2 className="moto-card__content-title">
           {moto.articleCompleteInfo.makeName}{" "}
@@ -22,8 +22,7 @@ const MotoCard = ({ moto }: MotoCardProps) => {
         {price}
         <span className="self-end text-[14px] font-medium">/day</span>
       </p>
-
-      <div className="relative w-full h-40 my-3 object-contain">
+      <div className="relative w-full h-40 my-3">
         <MotoImage articleID={moto.articleCompleteInfo.articleID} />
       </div>
 

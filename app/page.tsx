@@ -7,20 +7,31 @@ export default async function Home() {
 
   const dataYamaha = await getMotoData(Yamaha);
   const dataKawasaki = await getMotoData(Kawasaki);
+  const allMotos = [...dataYamaha, ...dataKawasaki];
 
   return (
-    <main className="overflow-hidden">
+    <main>
       {/* <Hero /> */}
       <div className="mt-12 padding-x padding-y max-width" id="discover">
-        <h1 className="text-4xl text-center mt-14 font-bold">
-          Hero Component HERE
-        </h1>
-        <div className="border-4 border-red-700  h-1/3">HERO COMPONENT</div>
-        {/* Multiple Items */}
-        <div className="home__motos-wrapper">
-          <MotoList moto={dataYamaha} />
-          <MotoList moto={dataKawasaki} />
+        <div className="home__text-conteiner">
+          <h1 className="text-4xl font-extrabold">Motocross Catalogue</h1>
+          <p>Discover the best motocross bikes for rent/buy in your area.</p>
         </div>
+
+        {/* Multiple Items */}
+        {allMotos.length > 0 ? (
+          <section>
+            <div className="home__motos-wrapper">
+              <MotoList moto={dataYamaha} />
+              <MotoList moto={dataKawasaki} />
+            </div>
+          </section>
+        ) : (
+          <div className="home__error-container">
+            <h2 className="text-black text-xl font-bold">Oops no results</h2>
+            <p>{allMotos}</p>
+          </div>
+        )}
       </div>
     </main>
   );
