@@ -1,4 +1,5 @@
 import Image from "next/image";
+import CustomButton from "./CustomButton";
 
 const Hero = () => {
   const handleScroll = () => {};
@@ -12,7 +13,10 @@ const Hero = () => {
           Streamline your moto rental experience with our efforless booking
           process.
         </p>
-        {/* <CustomButton /> */}
+        <CustomButton
+          title={"Book a Moto"}
+          containerStyles="bg-orange-400 text-white rounded-full mt-10"
+        />
       </div>
       <div className="hero__image-container">
         <div className="hero__image">
