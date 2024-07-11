@@ -1,3 +1,5 @@
+import { MouseEventHandler } from "react"
+
 export interface ArticleCompleteInfo {
   articleID: number
   makeName: string
@@ -14,4 +16,15 @@ export interface MotoProps {
 
 export interface MotoListProps {
   moto: MotoProps[];
+}
+
+export interface CustomButtonProps {
+  title: string;
+  containerStyles?: string;
+  handleClick?:
+  MouseEventHandler<HTMLButtonElement>;
+  btnType?: "button" | "submit";
+  textStyles?: string;
+  rightIcon?: string;
+  isDisabled?: boolean;
 }

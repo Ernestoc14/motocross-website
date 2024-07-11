@@ -11,12 +11,12 @@ export default async function Home() {
   const allMotos = [...dataYamaha, ...dataKawasaki];
 
   return (
-    <main>
+    <main className="overflow-hidden">
       <Hero />
       <div className="mt-12 padding-x padding-y max-width" id="discover">
         <div className="home__text-conteiner">
           <h1 className="text-4xl font-extrabold">Motocross Catalogue</h1>
-          <p>Discover the best motocross bikes for rent/buy in your area.</p>
+          <p className="font-medium">Discover the best motocross bikes for rent or buy in your area.</p>
         </div>
 
         {/* Multiple Items */}
