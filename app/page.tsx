@@ -1,5 +1,6 @@
 import { MotoList } from "@/components/MotoList";
 import { getMotoData } from "@/lib/actions/motos.action";
+import Hero from "@/components/Hero";
 
 export default async function Home() {
   const Yamaha = { Make: "Yamaha", Model: "yz125" };
@@ -11,7 +12,7 @@ export default async function Home() {
 
   return (
     <main>
-      {/* <Hero /> */}
+      <Hero />
       <div className="mt-12 padding-x padding-y max-width" id="discover">
         <div className="home__text-conteiner">
           <h1 className="text-4xl font-extrabold">Motocross Catalogue</h1>

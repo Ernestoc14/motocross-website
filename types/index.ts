@@ -11,3 +11,7 @@ export interface ArticleCompleteInfo {
 export interface MotoProps {
   articleCompleteInfo: ArticleCompleteInfo
 }
+
+export interface MotoListProps {
+  moto: MotoProps[];
+}

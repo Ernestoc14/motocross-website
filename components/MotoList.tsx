@@ -1,9 +1,5 @@
 import MotoCard from "./MotoCard";
-import { MotoProps } from "@/types";
-
-interface MotoListProps {
-  moto: MotoProps[];
-}
+import { MotoListProps } from "@/types";
 
 export function MotoList({ moto }: MotoListProps): JSX.Element {
   const motoData = Array.isArray(moto) ? moto : [];
