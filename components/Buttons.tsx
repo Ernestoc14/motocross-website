@@ -32,8 +32,10 @@ const Buttons = ({
         duration: 3000,
         position: "top-center",
         style: {
-          background: "#333",
+          background: "#444",
           color: "#fff",
+          padding: "16px",
+          fontWeight: 600
         },
       });
     } catch (error) {
