@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+// import { Toaster } from "sonner";
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: "Motocross Website",
@@ -18,6 +20,7 @@ export default function RootLayout({
       <body className="relative bg-whiteBg">
         <Navbar />
         {children}
+        <Toaster />
         <Footer />
       </body>
     </html>

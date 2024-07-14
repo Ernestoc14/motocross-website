@@ -1,5 +1,7 @@
 "use server"
 
+import { toast } from "sonner";
+
 export async function getMotoData({ Make, Model }: { Make: string, Model: string }) {
   const url =
     `https://motorcycle-specs-database.p.rapidapi.com/make/${Make}/model/${Model}`
@@ -37,26 +39,3 @@ export async function getMotoImage({ articleID }: { articleID: number }) {
     console.error(error);
   }
 }
-
-export async function handleButtonClick(makeName: string, modelName: string) {
-  var myHeaders = new Headers();
-  myHeaders.append("Content-Type", "application/json");
-  var raw = JSON.stringify({ makeName: makeName, modelName: modelName });
-  var requestOptions: RequestInit = {
-    method: "POST",
-    headers: myHeaders,
-    body: raw,
-    redirect: "follow",
-  };
-  try {
-    const response = await fetch(
-      "https://2t69hj7kyd.execute-api.us-west-2.amazonaws.com/dev",
-      requestOptions
-    );
-    const result = await response.json();
-    console.log(result.body)
-    alert(result.body);
-  } catch (error) {
-    console.log("error", error);
-  }
-};
