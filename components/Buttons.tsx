@@ -23,7 +23,7 @@ const Buttons = ({
     };
     try {
       const response = await fetch(
-        "https://2t69hj7kyd.execute-api.us-west-2.amazonaws.com/dev",
+        "https://2t69hj7kyd.execute-api.us-west-2.amazonaws.com/dev/POST-BOOK",
         requestOptions
       );
       const result = await response.json();
