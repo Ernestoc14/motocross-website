@@ -11,7 +11,7 @@ const Buttons = ({
   makeName: string;
   modelName: string;
 }) => {
-  async function handleButtonClick(makeName: string, modelName: string) {
+  async function handleBookClick(makeName: string, modelName: string) {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     var raw = JSON.stringify({ makeName: makeName, modelName: modelName });
@@ -35,7 +35,7 @@ const Buttons = ({
           background: "#444",
           color: "#fff",
           padding: "16px",
-          fontWeight: 600
+          fontWeight: 600,
         },
       });
     } catch (error) {
@@ -43,6 +43,37 @@ const Buttons = ({
     }
   }
 
+  async function handleBuyClick(makeName: string, modelName: string) {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    var raw = JSON.stringify({ makeName: makeName, modelName: modelName });
+    var requestOptions: RequestInit = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    };
+    try {
+      const response = await fetch(
+        "https://2t69hj7kyd.execute-api.us-west-2.amazonaws.com/dev/POST-BUY",
+        requestOptions
+      );
+      const result = await response.json();
+      console.log(result.body);
+      toast.success(result.body, {
+        duration: 3000,
+        position: "top-center",
+        style: {
+          background: "#444",
+          color: "#fff",
+          padding: "16px",
+          fontWeight: 600,
+        },
+      });
+    } catch (error) {
+      console.log("error", error);
+    }
+  }
   return (
     <div className="relative flex flex-col gap-3 w-full my-10">
       <div className="moto-card__btn-container bottom-0">
@@ -51,7 +82,7 @@ const Buttons = ({
           containerStyles="w-full py-[16px] rounded-full bg-orange-400"
           textStyles="text-white text-[14px] leading-[17px] font-bold"
           rightIcon="/right-arrow.svg"
-          handleClick={() => handleButtonClick(makeName, modelName)}
+          handleClick={() => handleBookClick(makeName, modelName)}
         />
       </div>
       <div className="moto-card__btn-container pt-1">
@@ -60,7 +91,7 @@ const Buttons = ({
           containerStyles="w-full py-[16px] rounded-full bg-orange-400"
           textStyles="text-white text-[14px] leading-[17px] font-bold"
           rightIcon="/right-arrow.svg"
-          handleClick={() => handleButtonClick(makeName, modelName)}
+          handleClick={() => handleBuyClick(makeName, modelName)}
         />
       </div>
     </div>
