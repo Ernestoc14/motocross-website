@@ -8,7 +8,7 @@ export async function getMotoData({ Make, Model }: { Make: string, Model: string
   const options = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": "620e7b4c35msh85deae73d14589cp1e3be7jsnc7196bcee00c",
+      "X-RapidAPI-Key": "fecf07d38dmshfd72a9487e6306fp111022jsn45da8bbfecda",
       "X-RapidAPI-Host": "motorcycle-specs-database.p.rapidapi.com",
     },
   };
@@ -26,7 +26,7 @@ export async function getMotoImage({ articleID }: { articleID: number }) {
   const options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': '620e7b4c35msh85deae73d14589cp1e3be7jsnc7196bcee00c',
+      'X-RapidAPI-Key': 'fecf07d38dmshfd72a9487e6306fp111022jsn45da8bbfecda',
       'X-RapidAPI-Host': 'motorcycle-specs-database.p.rapidapi.com'
     }
   };
